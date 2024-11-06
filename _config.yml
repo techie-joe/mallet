@@ -1,0 +1,26 @@
+# Mallet Configurations
+
+title: Techie Joe's Mallet
+description: A Jekyll theme for building websites on GitHub.
+favicon: favicon.ico
+manifest: manifest.json
+color_scheme: 'light dark'
+theme_color: '#222'
+
+# google_analytics: # Fill in your Google Analytics ID to track your website using Google Analytics
+
+sass:
+  style: compressed
+
+exclude: # Exclude these files from production site
+- "*.gemspec"
+- Gemfile
+- Gemfile.lock
+- CNAME
+- ".github"
+- ".local"
+
+# plugins:
+#  - jekyll-remote-theme
+#  - jekyll-paginate
+#  - jekyll-sitemap
