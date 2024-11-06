@@ -1,6 +1,6 @@
 <h1 id="_hero-title">Techie Joe's Mallet</h1>
 
-A Jekyll theme for my websites
+A Jekyll theme for building websites on GitHub
 ---
 
 ```yml
