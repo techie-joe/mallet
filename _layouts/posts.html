@@ -1,6 +1,7 @@
 ---
+# post within an article
 name: posts
-layout: main
+layout: article
 ---
 <h1 class="text-secondary">{{ page.title }}</h1>
 <blockquote class="text-small">
@@ -8,3 +9,5 @@ layout: main
 </blockquote>
 <hr>
 {{ content }}
+<hr>
+{% include back.html %}

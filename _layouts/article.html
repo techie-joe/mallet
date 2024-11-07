@@ -1,0 +1,12 @@
+---
+# an article with header and footer
+name: article
+layout: body
+---
+<main id="app" class="_app __fadein">
+  <div id="layout" class="container-lg px-3 markdown-body">
+    {% include header.html %}
+    <article id="article">{{ content }}</article>
+		{% include footer.html %}
+  </div>
+</main>
