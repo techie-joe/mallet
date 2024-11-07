@@ -1,12 +1,14 @@
 ---
-title: Mallet Demo
-description: Techie Joe's Mallet Demo
+title: Demo Page
+description: Demo page for a Jekyll theme.
+permalink: demo
 ---
 
-This is a demo page for **Techie Joe’s Mallet** - a Jekyll theme for building websites on GitHub. **Mallet** can help you build website easily. It has everything pre-configured to get you started right away. You can write contents in both Markdown and HTML. When you commit your code, **GitHub Pages** will build and publish your website from the content of your repository.
+This is a demo page for **{{ site.title }}** - a Jekyll theme for building websites on GitHub. **{{ site.nickname }}** can help you build website easily. It has everything pre-configured to get you started right away. You can write contents in both Markdown and HTML. When you commit your code, **GitHub Pages** will build and publish your website from the content of your repository.
 {: .bg-secondary.p-3.text-slategray.text-small }
 
-<h1 class="hero" id="_hero-title">Write <span class="text-red">a big red</span> hero text</h1>
+# Write <span class="text-red">a big red</span> hero text
+{: #_hero-title.hero }
 
 ***
 
@@ -14,8 +16,8 @@ This is a demo page for **Techie Joe’s Mallet** - a Jekyll theme for building 
 
 ![Small image](https://picsum.photos/id/299/400/300){: .centered.float-sm-right.m-sm-4 width=400 height=300 }
 
-Use <code>big-first</code> to enlarge the first letter of a paragraph.
-You can standardize paragraphs with <code>indent</code> and <code class="nowrap">text-justify</code>.
+When ever you wish to enlarge the first letter of a paragraph, use <code class="nowrap">big-first</code>.
+To indent  a paragraph with an `indent`. Align paragraph using <code class="nowrap">text-justify</code>.
 Include image with floats and margins.
 {: .big-first.text-justify }
 
