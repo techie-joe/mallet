@@ -5,7 +5,7 @@ A Jekyll theme for building websites on GitHub
 
 ```yml
 
-remote_theme: techie-joe/sites
+remote_theme: techie-joe/mallet
 
 remote_theme_build_revision: {{ site.github.build_revision }}
 
