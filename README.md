@@ -31,7 +31,7 @@ You're allowed to use the code with conditions only requiring preservation of co
   
 ---
 
-| **[techie-joe.github.io](//techie-joe.github.io)** | [View source on GitHub][source] |
+| **[HOME](//techie-joe.github.io)** | [View source on GitHub][source] |
 
 [website]: //techie-joe.github.io/mallet/ "Techie Joe's Mallet"
 [source]: //github.com/techie-joe/mallet "Techie Joe's Mallet repository"
