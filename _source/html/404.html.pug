@@ -1,0 +1,10 @@
+extends _html
+block append vars
+  - path   = '404.html'
+  - title  = `Not found`
+  - description = `We can't find what you are looking for.`
+block content
+  +sample_404("Oops! Nothing found")
+block footer
+  //- no site footer
+  +_edit_link

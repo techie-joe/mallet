@@ -1,0 +1,9 @@
+extends _html
+block append vars
+  - path   = 'post.html'
+  - title  = `Post`
+  - description = 'Post template in html.'
+block prepend footer
+  +include('post_footer','post_footer.md')  
+block content
+  +sample_post

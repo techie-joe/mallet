@@ -1,0 +1,28 @@
+extends _html
+block append vars
+  - path   = 'samples.html'
+  - title  = `Samples`
+  - description = `Browse sample templates and layouts.`
+  - permalink = 'samples'
+block content
+  .relative: ._bimoji(style="top:4rem;scale:11") !{icon}
+
+  p.hero !{removeLastDot(description)}
+
+  p(style="max-width:650px").
+    🚀 Get a head start with our samples.
+    #[strong #[a(href="./preview.html") Preview the live demo]] to see the theme in action,
+    then #[strong #[a(href="./#how-to-use") start using it today!]]
+
+  h1 Theme samples
+
+  nav.mv
+    b Templates written in Html
+    br/
+    +site_nav(layout_name+'/html')
+  nav.mv
+    b Templates written in Markdown
+    br/
+    +site_nav(layout_name+'/md')
+
+  div(style="margin-top:3rem")

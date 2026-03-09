@@ -1,0 +1,8 @@
+extends mallet
+block append vars
+  - layout_type = '-post.html.pug'
+block content
+  |{{ content }}
+block footer
+  +include('post_footer','post_footer.md')
+  +include('footer','footer.md')

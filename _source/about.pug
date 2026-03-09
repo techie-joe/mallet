@@ -1,0 +1,7 @@
+extends _html
+block append vars
+  - path   = 'about.html'
+  //- - title  = `About`
+  //- - description = `About the theme.`
+block content
+  +include_relative('about','README.md')

@@ -1,0 +1,7 @@
+extends _html
+block append vars
+  - path   = 'colors.html'
+  - title  = `Colors`
+  - description = `Color samples.`
+block content
+  +include('test','dove/test_colors.md')

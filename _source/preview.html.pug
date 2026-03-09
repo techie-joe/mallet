@@ -1,0 +1,8 @@
+extends _html
+block append vars
+  - path   = 'preview.html'
+  - title  = `Preview`
+  - description = `See how the theme looks.`
+  - permalink = 'preview'
+block content
+  +include('preview','dove/preview.md')

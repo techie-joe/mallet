@@ -1,0 +1,81 @@
+include _dove
+block vars
+  - layout_name = 'html'
+  - layout_type = '.pug'
+block update_vars
+
++front_matter: block front_matter
+  +l| layout: !{layout || 'raw' }
+  if index == false
+    +l| index: false
+  if index
+    +l| index: !{index}
+  if title
+    +l| title: !{title}
+  if description
+    +l| description: !{description}
+  if permalink
+    +l| permalink: !{permalink}
+
+mixin main_style
+  link#_style(rel="stylesheet" href!=`{{ site.baseurl }}/assets/${ layout_name }/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
+
+mixin main_block
+  +l!=`{%- if page.use_header != false -%}`
+  header._header: ._layout._header_layout: block header
+    +include('header','header.md')
+  +l!=`{%- endif %}`
+  +l!=`{%- if page.use_nav != false -%}`
+  nav._nav: ._layout._nav_layout: block nav
+    +include('nav','nav.md')
+  +l!=`{%- endif %}`
+  article._article: ._layout._article_layout: block content
+    h1 {{ page.title | default: '(untitled)' }}
+    p: code // page content
+  +l!=`{%- if page.use_footer != false -%}`
+  footer._footer: ._layout._footer_layout: block footer
+    +include('footer','footer.md')
+  +l!=`{%- endif %}`
+
+mixin topbar
+  +l|{%- include theme_switch.html %}
+
+mixin lowbar
+  +l|{%- include copyright.html %}
+  +l|{%- include credit.html %}
+
+block html
+  doctype html
+  +l|<!-- path        : {{ page.path }} -->
+  +l|<!-- layout      : {{ page.layout }} -->
+  +l|<!-- source      : _source/_layouts/!{ layout_name }!{ layout_type } -->
+  +l|<!-- title       : {{ page.title | default: site.title | default: "(untitled)" }} -->
+  +l|<!-- description : {{ page.description | default: site.description | default: "(undescribed)" }} -->
+  +l|<!-- copyright   : {{ site.author | default: site.github.owner_display_name | default:'(unknown)' }} {{ "now" | date: "%Y" }} -->
+  html(lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class=`_${ layout_name }_layout no_js`)
+    head: block head
+      meta(charset="{{ site.encoding | default: 'utf-8' }}")/
+      +l|{% seo %}
+      meta(name="viewport" content="width=device-width,initial-scale=1")/
+      meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")/
+      meta#_theme_color(name="theme-color" content="{{ page.theme_color | default: site.theme_color | default: '' }}")/
+      meta#_color_scheme(name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}")/
+      block style
+        style.
+          .isvg svg { width:1em;height:1em }
+        +holdBody
+        block main_style
+      +l|{%- include layout_head.html %}
+      +l|<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+    body: ._body_layout._layout
+      block body
+        main._view: ._layout._main_layout: block main
+          +main_block
+        aside._view._topbar_view: ._layout._topbar_layout: block topbar
+          +topbar
+        aside._view._lowbar_view: ._layout._lowbar_layout: block lowbar
+          +lowbar
+        +l|{%- include layout_body.html %}
+      block script
+        script.
+          ((de=document.documentElement)=>{de.className=de.className.replace('no_js','js')})();

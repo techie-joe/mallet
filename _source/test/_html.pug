@@ -1,0 +1,17 @@
+extends /_source/_layouts/mallet
+block append vars
+  include ../_icon
+  - index = false
+block append update_vars
+  - path = [layout_name+'/test',path].join('/')
+block append nav
+  .mv: +test_nav(layout_name+'/test')
+  +thin_hr
+block footer
+  +thin_hr
+  nav._common_nav: .mv: +test_nav(layout_name+'/test')
+  +thin_hr
+  nav._common_nav: .mv: +demo_nav(layout_name)
+  +thin_hr
+  nav._common_nav: +include('tj_nav','dove/tj_nav.md')
+  +_edit_link

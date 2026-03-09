@@ -1,0 +1,13 @@
+extends html
+block append vars
+  - layout_name = 'mallet'
+block main_style
+  +main_style
+block body
+  main._view: ._main_layout._layout.container-lg.markdown-body: block main
+    +main_block
+  aside._view._topbar_view: ._layout._topbar_layout.container-lg: block topbar
+    +topbar
+  aside._view._lowbar_view: ._layout._lowbar_layout.container-lg: block lowbar
+    +lowbar
+  +l|{% include layout_body.html %}

@@ -1,0 +1,219 @@
+include _main
+
+//- ==============================================================
+//- mixins
+//- ==============================================================
+
+mixin front_matter
+  !='---'
+  block
+  !='\n---\n'
+
+mixin code(id,type='')
+  !='```'+type+'\n'
+  block
+  !='\n```\n'
+  if id
+    !=`{: #${id} }\n`
+
+mixin yml(id)
+  !='```yml\n'
+  block
+  !='\n```\n'
+  if id
+    !=`{: #${id} }\n`
+
+- capture = { prefix:'c_', n:0 };
+- capture.id = capture.prefix + capture.n;
+
+mixin capture(id=capture.id)
+  !=`{%- capture ${id} %}`
+  block
+  !=`{%- endcapture %}`
+  - capture.n++; capture.id = capture.prefix + capture.n;
+
+mixin capture_code(id=capture.id,type)
+  +capture(id): +code(id,type): block
+  !=`{{ ${id} | markdownify }}`
+  - capture.n++; capture.id = capture.prefix + capture.n;
+
+mixin include(id='',path='')
+  +capture(id)!=`{%- include ${path} %}`
+  !=`{{ ${id} | markdownify }}`
+
+mixin include_relative(id='',path='')
+  +capture(id)!=`{%- include_relative ${path} %}`
+  !=`{{ ${id} | markdownify }}`
+
+mixin if(what)
+  !=`{%- if ${what} -%}`
+  block
+  !=`{%- endif %}`
+
+mixin if_env(environment)
+  - what = `site.github.environment == '${environment}'`;
+  +if(what): block
+
+mixin if_dev
+  +if_env('development'): block
+
+mixin if_prod
+  +if_env('production'): block
+
+//- ==============================================================
+//- icons
+//- ==============================================================
+
+mixin _itext
+  +l: +itext: block
+
+mixin _isvg(icon=svgi.angle)
+  +l: +isvg(icon)
+
+mixin bull
+  +itext|&bull;
+
+mixin _bull
+  +_itext|&bull;
+
+mixin middot
+  +itext|&middot;
+
+mixin _middot
+  +_itext|&middot;
+
+mixin angle
+  +isvg(svgi.angle)
+
+mixin _angle
+  +_isvg(svgi.angle)
+
+//- ==============================================================
+//- mixins
+//- ==============================================================
+
+mixin holdBody
+  style.
+    .hold { display:none }
+  script.
+    ((d=document)=>{
+      const c=(d.documentElement||d.body).classList;
+      c.add('hold');
+      d.addEventListener('DOMContentLoaded',_=>{c.remove('hold')});
+    })();
+
+mixin fadeInBody
+  style.
+    .fade { transition:opacity .5s linear }
+    .fadeOut { opacity:0 }
+    @media (prefers-reduced-motion: reduce) {
+      .fadeOut { transition:none }
+    }
+  script.
+    ((d=document)=>{
+      const c=(d.documentElement||d.body).classList;
+      c.add('fade','fadeOut');
+      d.addEventListener('DOMContentLoaded',_=>{
+        c.remove('fadeOut');setTimeout(_=>c.remove('fade'),500);
+      });
+    })();
+
+mixin thin_hr
+  hr.thin/
+
+mixin hide_header
+  //- style.
+    ._header{display:none !important}
+
+mixin hide_nav
+  //- style.
+    ._nav{display:none !important}
+
+mixin hide_footer
+  //- style.
+    ._footer{display:none !important}
+
+mixin edit_link(path)
+  | This site is open source.
+  | #[a(href=`{{ site.github.repository_url }}/edit/main/_source/${path}.pug`)| Improve this page].
+
+mixin _edit_link
+  +thin_hr
+  p.text-right.text-grey: small: +edit_link(path)
+
+mixin sn(ref='')
+  - _len  = 'mallet/'.length;
+  - _path = removePathExt(path.substr(_len),'html');
+  - _ref  = ref.substr(_len);
+  if _ref == _path || _ref+'index' == _path
+    b: block
+  else
+    +a(['{{ site.baseurl }}',_ref].join('/')): block
+
+mixin demo_nav(ref)
+  +sn(ref+"/")| Home
+  +bull
+  +sn(ref+"/preview")| Preview
+  +bull
+  +sn(ref+"/samples")| Samples
+  +bull
+  +sn(ref+"/pages")| Pages
+  +bull
+  +sn(ref+"/posts")| Posts
+
+mixin test_nav(ref)
+  +sn(ref+"/")| Test
+  +angle
+  +sn(ref+"/colors")| Colors
+  +bull
+  +sn(ref+"/code-blocks")| Code blocks
+
+mixin site_nav(ref)
+  +sn(ref+"/")| Home
+  +bull
+  +sn(ref+"/page")| Page
+  +bull
+  +sn(ref+"/post")| Post
+  +bull
+  +sn(ref+"/404")| 404
+
+mixin sample_nav(ref)
+  +sn(ref+"/samples")| Sample
+  +angle
+  +site_nav(ref+'/html')
+
+mixin sample_404(_title,_description)
+  .flex(style="margin:2rem 0 3rem")
+    .fit(style="font-size:4rem;padding:.8rem;line-height:1") 🤷
+    .f(style="padding:0 1rem;")
+      h3(style="margin-top:0;padding-top:1rem;") !{ _title || title }
+      p !{ _description || description }
+  +thin_hr
+  +include('common_nav','dove/sample_common_nav.md sub="html"')
+
+mixin sample_home
+  style.
+    ._article h1.hero { border:0;padding-bottom:0 }
+    ._article h2.desc { border:0;margin-top:-1rem }
+  //- 
+  .relative: ._bimoji !{icon}  
+  h1.hero !{title} template
+  h2.desc !{icon} Slogan and description
+  p Direct visitors towards the next step with a clear #[b #[a(href="#CTA" onclick=onclick()) call to action]]
+  div(style="margin-top:1rem")
+  a(href="#CTA1" onclick="event.preventDefault();" title="Main call to action." class="button primary" style="padding:.5em 1em;font-size:1rem;") Get started
+  a(href="#CTA2" onclick="event.preventDefault();" title="Secondary call to action." class="button secondary" style="padding:.5em 1em;font-size:1rem;font-weight:normal;") Learn more
+  div(style="margin-top:2.5rem")
+  +thin_hr
+  p: code // content written in html
+  +include('vars_page','dove/vars_page.md')
+
+mixin sample_page
+  h1 Page template
+  p: code // content written in html
+  +include('vars_page','dove/vars_page.md')
+
+mixin sample_post
+  h1 Post template
+  p: code // content written in html
+  +include('vars_page','dove/vars_page.md')

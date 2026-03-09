@@ -1,0 +1,7 @@
+extends _html
+block append vars
+  - path   = 'code-blocks.html'
+  - title  = `Code blocks`
+  - description = `Code block samples.`
+block content
+  +include('code-blocks','dove/test_code_blocks.md')

@@ -1,0 +1,8 @@
+extends _html
+block append vars
+  - path   = 'classic.html'
+  - title  = `Classic Demo`
+  - description = `The classic demo page.`
+  - permalink = 'classic'
+block content
+  +include('classic','dove/preview_classic.md')

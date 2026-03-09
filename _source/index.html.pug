@@ -1,0 +1,16 @@
+extends about
+block append vars
+  - path = 'index.html'
+block append front_matter
+  +l| use_header: false
+  +l| use_nav: false
+//- block header
+  .h1|{% include dove/tj_logo.html %}
+block append style
+  style.
+    ._article h1 { border:0;font-size:3em;font-weight:bold }
+    ._article h2:first-of-type { border:0;padding-bottom:1rem;margin-top:-0.7em }
+    ._footer { margin-top:3rem }
+block prepend content
+  .relative: ._bimoji !{icon}
+  //- +include('_page','dove/vars_page.md')

@@ -1,0 +1,82 @@
+//- ==============================================================
+//- mixins
+//- ==============================================================
+
+mixin join(a,s)
+  !=a.join(s||`\n`)
+
+mixin repeat(a,b)
+  - b = b||0;
+  - let diff = Math.abs(a-b)+(b?1:0);
+  - let n = 0;
+  while n < diff
+    block
+    - n++;
+
+mixin _
+  =` `
+  block
+
+mixin l
+  !='\n'
+  block
+
+mixin -
+  li: block
+
+mixin comment
+  !='<!-- '
+  block
+  !=' -->'
+
+mixin css(href,media)
+  link(rel="stylesheet" media=media||'all' href=href)&attributes(attributes)/
+
+mixin js(src)
+  script(type="text/javascript" src=src)&attributes(attributes)
+
+//- ==============================================================
+//- navigations
+//- ==============================================================
+//- a link must specify href for good SEO, # were considered best.
+
+mixin a(href,title)
+  a(href=href||'#' title=title)&attributes(attributes): block
+
+mixin _a(href,title)
+  +l: +a(href,title)&attributes(attributes): block
+
+mixin lia(href,title)
+  li: +a(href,title)&attributes(attributes): block
+
+//- ==============================================================
+//- images
+//- ==============================================================
+
+mixin img(src,alt,title)
+  img(src=src alt=alt title=title)&attributes(attributes)/
+
+mixin svgi(d,viewBox,opacity,fill)
+  svg(viewBox=viewBox||"0 0 24 24")&attributes(attributes): path(d=d fill=fill||'currentColor' fill-opacity=opacity||'1')
+
+//- ==============================================================
+//- icons
+//- ==============================================================
+
+mixin isvg(d,cls)
+  i.icon(class=cls): i.isvg&attributes(attributes): +svgi(d)
+
+mixin fa(cls)
+  i.icon(class=cls): i.fa&attributes(attributes): block
+
+mixin fas(cls)
+  i.icon(class=cls): i.fas&attributes(attributes): block
+
+mixin far(cls)
+  i.icon(class=cls): i.far&attributes(attributes): block
+
+mixin fab(cls)
+  i.icon(class=cls): i.fab&attributes(attributes): block
+
+mixin itext(cls)
+  i.icon(class=cls): i.itext&attributes(attributes): block

@@ -1,0 +1,9 @@
+extends _html
+block append vars
+  - path   = 'page.html'
+  - title  = `Page`
+  - description = 'Page template in html.'
+block prepend footer
+  +include('page_footer','page_footer.md')
+block content
+  +sample_page

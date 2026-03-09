@@ -1,0 +1,17 @@
+extends /_source/_layouts/mallet
+block append vars
+  include ../_icon
+  - index = false
+block append update_vars
+  - path = [layout_name+'/html',path].join('/')
+block prepend front_matter
+  +l| sample: true
+block nav
+  .mv: +sample_nav(layout_name)
+  +thin_hr
+block footer
+  +thin_hr
+  p: code // site footer
+  +thin_hr
+  nav._common_nav: .mv: +sample_nav(layout_name)
+  +_edit_link
