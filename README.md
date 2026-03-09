@@ -153,4 +153,4 @@ See the [open issues](https://github.com/techie-joe/mallet/issues) for a list of
 
 ## License
 
-**[Mallet](https://github.com/techie-joe/mallet/)** is an open source project licensed under the [MIT LICENSE](https://github.com/techie-joe/mallet/blob/main/LICENSE). You're allowed to use the code with conditions only requiring preservation of copyright and license notices.
+**Mallet** is an open source project licensed under the [MIT LICENSE](https://github.com/techie-joe/mallet/blob/main/LICENSE). You're allowed to use the code with conditions only requiring preservation of copyright and license notices.
