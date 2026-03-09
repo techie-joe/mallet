@@ -1,32 +1,87 @@
-# Main Configurations
+# ================================================================
+# theme: mallet
+# ================================================================
 
-    title: Techie Joe's Mallet
-    description: A Jekyll theme for building websites on GitHub.
-    favicon: favicon.ico
-    manifest: manifest.json
-    color_scheme: 'light dark'
-    theme_color: '#222'
+title: Techie Joe's Mallet
+description: Mallet is a Jekyll theme for GitHub Pages.
+# title       : The title of your site
+# description : Short description of your site.
+author        : Techie Joe
 
-    # Fill in your Google Analytics ID to track your website using Google Analytics
-    # google_analytics:
+version       : 0.0.2
+revision      : 2603.9
 
-    sass:
-      style: compressed
+baseurl       : /mallet
+home_url      : /mallet
+live_url      : https://techie-joe.github.io/mallet
 
-    exclude: # Exclude these files from production site
-    - "*.gemspec"
-    - Gemfile
-    - Gemfile.lock
-    - CNAME
-    - ".github"
-    - ".backup"
-    - ".local"
+lang          : en-US
 
-    # plugins:
-    #  - jekyll-remote-theme
-    #  - jekyll-paginate
-    #  - jekyll-sitemap
+ghost: bG9jYWxob3N0OjQwMDAsdGVjaGllLWpvZS5naXRodWIuaW8
+# ghost: your-tracking-id
+# to track your ThemeJs.
 
-# Custom Configurations
+# google_analytics: your-tracking-id
+# to track your website using Google Analytics.
 
-    nickname: Mallet
+# cloudflare_analytics: your-tracking-id
+# to track your website using Cloudflare Analytics.
+
+# show_downloads: true
+# true or false (unquoted).
+# to indicate whether to provide a download URL.
+
+# github:
+#   zip_url: http://example.com/download.zip
+#   another_url: another_value
+
+sass:
+  style: compressed
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+  # - jekyll-paginate
+  # - jekyll-redirect-from
+  # - jekyll-sitemap
+  # - jekyll-feed
+  # - jemoji
+
+# exclude these from production (_site).
+exclude:
+  - ".editorconfig"
+  - ".github"
+  - ".gitignore"
+  - ".sass-cache"
+  - ".jekyll-cache"
+  - ".jekyll-metadata"
+  - ".bundle"
+  - "*.gem"
+  - "*.gemspec"
+  - Gemfile
+  - Gemfile.lock
+  - script
+  - vendor
+  - node_modules
+  - gulpfile.js
+  - package-lock.json
+  - package.json
+  - CNAME
+  - "*.x"
+  - "*.ignore"
+  - "*.backup"
+  - "*.localhost"
+
+# ================================================================
+
+favicon: favicon.ico
+manifest: manifest.json
+color_scheme: 'light dark'
+theme_color: '#222'
+nickname: Mallet
