@@ -1,0 +1,6 @@
+#!/bin/sh
+# Install dependencies.
+
+set -e
+
+bundle install

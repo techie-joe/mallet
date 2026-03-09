@@ -1,0 +1,7 @@
+#!/bin/sh
+# Required one-time setup before other script can function.
+
+set -e
+
+gem install bundler
+bundle install

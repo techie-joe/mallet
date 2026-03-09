@@ -1,0 +1,6 @@
+#!/bin/sh
+# Build the theme then watch for changes.
+
+set -e
+
+bundle exec jekyll build --watch

@@ -1,0 +1,11 @@
+#!/bin/sh
+# Build the site.
+# Ensure the site were build successfully.
+
+set -e
+
+bundle exec jekyll build
+bundle exec htmlproofer ./_site --check-html --check-sri
+bundle exec rubocop -D --config .rubocop.yml
+bundle exec script/validate-html
+gem build mallet.gemspec
