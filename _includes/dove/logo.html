@@ -1,0 +1,11 @@
+{%- assign _logo = include.name | default: page.layout %}
+{%- case _logo %}
+{%- when 'core' or 'core-page' or 'core-post' %}
+<span class="_logo"><a href="{{ site.baseurl }}/core">💎 The Core Theme</a></span>
+{%- when 'mallet' or 'mallet-page' or 'mallet-post' %}
+<span class="_logo"><a href="{{ site.baseurl }}/mallet">⚒️ Techie Joe's Mallet</a></span>
+{%- when 'prime' or 'prime-page' or 'prime-post' %}
+<span class="_logo"><a href="{{ site.baseurl }}/prime">🦅 The Prime Theme</a></span>
+{%- else %}
+<span class="_logo"><a href="{{ site.baseurl }}/">🕊️ The Dove Project</a></span>
+{%- endcase %}

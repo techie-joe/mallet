@@ -1,0 +1,9 @@
+{%- assign _icon = include.name | default: page.layout %}
+{%- capture icon %}
+{%- case _icon %}
+{%- when 'core' or 'core-page' or 'core-post' -%}💎
+{%- when 'mallet' or 'mallet-page' or 'mallet-post' -%}⚒️
+{%- when 'prime' or 'prime-page' or 'prime-post' -%}🦅
+{%- else -%}🕊️
+{%- endcase %}
+{%- endcapture %}

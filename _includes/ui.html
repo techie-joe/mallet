@@ -1,0 +1,10 @@
+{%- assign nl="
+" %}
+{%- assign onclick="event.preventDefault();" %}
+{%- assign js_back="(function(w){var h=w.history;w.opener?w.close():h.length>1?h.back():w.location.href='/';})(window);" %}
+{% capture thin_hr -%}<hr class="thin" />{%- endcapture %}
+{% capture bull -%}{% include itext.html text="&bull;" %}{%- endcapture %}
+{% capture colon -%}{% include itext.html text=":" %}{%- endcapture %}
+{% capture middot -%}{% include itext.html text="&middot;" %}{%- endcapture %}
+{% capture angle -%}{% include isvg.html path="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" %}{%- endcapture %}
+{% capture edit_link -%}{% if site.github.private != true and site.github.license %}{% github_edit_link "Edit this page" %}{% else %}Edit disabled{% endif %}{%- endcapture %}
