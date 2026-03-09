@@ -1,0 +1,111 @@
+@use "sass:color";
+
+$highlight_bg         : #f8f8f8;
+
+$highlight_p          : #808080;
+
+$highlight_bp         : #999999;
+
+$highlight_c          : #999988;
+$highlight_cp         : #999999;
+
+$highlight_err        : #a61717;
+$highlight_err_bg     : #e3d2d2;
+
+$highlight_gp         : #555555;
+$highlight_go         : #888888;
+$highlight_gh         : #999999;
+$highlight_gu         : #aaaaaa;
+$highlight_gr         : #aa0000;
+$highlight_gd_bg      : #ffdddd;
+$highlight_gi_bg      : #ddffdd;
+
+$highlight_keyword    : #556699;
+$highlight_kc         : #008080;
+$highlight_kt         : #445588;
+
+$highlight_num        : #009999;
+$highlight_str        : #BB5511;
+$highlight_regex      : #009926;
+$highlight_symbol     : #990073;
+
+$highlight_na         : #008080;
+$highlight_nb         : #0086B3;
+$highlight_nc         : #445588;
+$highlight_nd         : #3c5d5d;
+$highlight_ne         : #BB1111;
+$highlight_ni         : #800080;
+$highlight_nn         : #555555;
+$highlight_nt         : #000080;
+
+$highlight_w          : #bbbbbb;
+
+.highlight {
+  & { background-color: $highlight_bg }
+
+  table {
+    td { padding:5px }
+    pre { margin:0 }
+  }
+
+  .o, .ow,
+  .p { color: $highlight_p; }
+
+  .c, .cm, .c1, .cd,.cs,
+  .ge { font-style: italic; }
+  .ne, .nf, .nl, .nc, .nd,
+  .o, .ow,
+  .k, .kv, .kc, .kd, .kn, .kp, .kr,
+  .cs,
+  .gs { font-weight: bold; }
+
+  .c, .cm, .c1, .cd { color: $highlight_c; }
+  .cp { color: $highlight_cp; }
+
+  .err { color: $highlight_err; background-color: $highlight_err_bg; }
+
+  .gd, .gi, .ge,
+  .k, .kv, .kd, .kn, .kp, .kr { color: $highlight_keyword; }
+
+  .gd { background-color: $highlight_gd_bg; }
+  .gi { background-color: $highlight_gi_bg; }
+  .gp { color: $highlight_gp; }
+  .go { color: $highlight_go; }
+  .gh { color: $highlight_gh; }
+  .gu { color: $highlight_gu; }
+  .gr, .gt { color: $highlight_gr; }
+
+  .kc { color: $highlight_kc; }
+  .kt { color: $highlight_kt; }
+
+  .il,
+  .m, .mf, .mh, .mi, .mo, .mb, .mx { color: $highlight_num; }
+
+  .s, .sb, .sc, .sd, .s1, .s2, .se, .sh, .si, .sx { color: $highlight_str; }
+  .sr { color: $highlight_regex; }
+  .ss { color: $highlight_symbol; }
+
+  .bp { color: $highlight_bp; }
+
+  .vc, .vg, .vi,
+  .na, .no, .nv { color: $highlight_na; }
+  .nb { color: $highlight_nb; }
+  .nc { color: $highlight_nc; }
+  .nd { color: $highlight_nd; }
+  .ni { color: $highlight-ni; }
+  .nn { color: $highlight_nn; }
+  .nt { color: $highlight_nt; }
+  .ne, .nf, .nl { color: $highlight_ne; }
+
+  .w { color: $highlight_w; }
+
+}
+._dark {
+  .highlight {
+    & { background-color: color.invert($highlight_bg); }
+    .gd, .gi, .ge,
+    .k, .kv, .kd, .kn, .kp, .kr
+    { color: color.invert($highlight_keyword); }
+  }
+}
+@media (prefers-color-scheme: dark) {}

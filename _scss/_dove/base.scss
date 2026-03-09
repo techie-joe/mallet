@@ -1,0 +1,33 @@
+@use "sass:color";
+@use "color" as *;
+// ---------------------------------------------------------------
+$grey: #888;
+// ---------------------------------------------------------------
+
+html,body { margin:0 }
+body { overflow-y:scroll }
+hr { border: 1px solid $grey }
+h1,h2,h3,h4,h5,h6 { margin-block-start:1.5rem; margin-block-end:1rem }
+p,blockquote,details { margin-block-start:1rem; margin-block-end:1rem }
+pre { padding:.5rem; overflow:auto }
+code,tt { background-color:rgba($grey,.3); padding:0 .25em}
+pre { code,tt { background:none } }
+blockquote { border-left:.25rem solid $grey; padding: 0 .5rem; }
+details summary p { display:inline }
+dt { margin-block-start:1rem; font-weight:bold }
+dd { margin-block-end:1rem }
+dt { font-style:italic }
+a {
+  & { color:$text-blue }
+  &:visited { color:$text-purple }
+  &:hover { color:$text-blue }
+}
+article {
+  img { max-width:100%; box-sizing:content-box }
+  table {
+    & { border-collapse: collapse }
+    &, td, th { border: 1px solid $grey }
+    td, th { padding:.5em }
+  }
+}
+

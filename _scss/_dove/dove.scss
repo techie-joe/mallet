@@ -1,0 +1,54 @@
+._logo { display:inline-block }
+._bimoji {
+  position:absolute;
+  font-size:1em;
+  opacity:.2;
+  right:10em;
+  line-height:1;
+  z-index:-1;
+  top:5em;
+  scale:14;
+}
+._theme_switch {
+  position:absolute;
+  position:fixed;
+  top:6px;
+  right:6px;
+  left:auto;
+  bottom:auto;
+  a {
+    display:inline-block;
+    padding:.5rem;
+    line-height:0;
+  }
+}
+._copyright,
+._credit {
+  position:absolute;
+  position:fixed;
+  top:auto;
+  bottom:0;
+}
+._copyright {
+  right:auto;
+  left:3px;
+}
+._credit {
+  right:3px;
+  left:auto;
+}
+._copyright_text,
+._credit_link {
+  font-family: 'Arial', system-ui, sans-serif !important;
+  font-size:12px !important;
+  padding:.5em !important;
+  border-radius:5px 5px 0 0 !important;
+  background: #fff !important;
+  color:inherit !important;
+  text-decoration: none !important;
+  line-height:2 !important;
+}
+._dark{
+  ._copyright_text,
+  ._credit_link { background: #000 !important }
+}
