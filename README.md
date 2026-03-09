@@ -2,10 +2,10 @@
 
 ## ⚒️ A Jekyll theme for GitHub Pages
 
-**[Preview the live demo](preview.html)** to see this theme in action, then **[start using it today!](#how-to-use)**
+**[Preview the live demo](https://techie-joe.github.io/mallet/preview.html)** to see this theme in action, then **[start using it today!](#how-to-use)**
 
-<a href="preview.html" title="See this theme in action." class="button primary" style="padding:.5em 1em;font-size:1.2rem;">Preview</a>
-<a href="samples.html" title="View some samples." class="button secondary" style="padding:.5em 1em;font-size:1.2rem;font-weight:normal;">Samples</a>
+<a href="https://techie-joe.github.io/mallet/preview.html" title="See this theme in action." class="button primary" style="padding:.5em 1em;font-size:1.2rem;">Preview</a>
+<a href="https://techie-joe.github.io/mallet/samples.html" title="View some samples." class="button secondary" style="padding:.5em 1em;font-size:1.2rem;font-weight:normal;">Samples</a>
 
 <div style="margin-top:3rem"></div>
 
@@ -154,4 +154,4 @@ See the [open issues](https://github.com/techie-joe/mallet/issues) for a list of
 
 ## License
 
-**Mallet** is an open source project licensed under the [MIT LICENSE](//github.com/techie-joe/mallet/blob/main/LICENSE). You're allowed to use the code with conditions only requiring preservation of copyright and license notices.
+**Mallet** is an open source project licensed under the [MIT LICENSE](https://github.com/techie-joe/mallet/blob/main/LICENSE). You're allowed to use the code with conditions only requiring preservation of copyright and license notices.
