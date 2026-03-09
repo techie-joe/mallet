@@ -13,8 +13,8 @@ description: List of things to do.
 
 ```
 - housekeep _includes
-- fonts
-- manifest
+- add custom fonts support
+- add custom manifest support
 ```
 
 <div style="margin-top:3rem"></div>
