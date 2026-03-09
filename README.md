@@ -2,7 +2,7 @@
 
 ## ⚒️ A Jekyll theme for GitHub Pages
 
-**[Preview the live demo](preview.html)** to see this theme in action, then **[start using it today!](#how-to-use)**
+**[Preview the live demo](https://techie-joe.github.io/mallet/preview.html)** to see this theme in action, then **[start using it today!](#how-to-use)**
 
 {{ CTA }}
 
