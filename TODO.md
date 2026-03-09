@@ -8,7 +8,13 @@ description: List of things to do.
 
 <!-- - `try proto`{: .text-yellow } -->
 
-> // none at the moment.
-{: .mono.smaller }
+<!-- > // none at the moment. -->
+<!-- {: .mono.smaller } -->
 
-<div style="margin-top:5rem"></div>
+```
+- housekeep _includes
+- fonts
+- manifest
+```
+
+<div style="margin-top:3rem"></div>

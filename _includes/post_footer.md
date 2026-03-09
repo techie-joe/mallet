@@ -1,5 +1,5 @@
 {%- include ui.html %}
-{%- if site.github.repository_nwo == 'techie-joe/dove' %}
+{%- if page.sample %}
 {%- include dove/sample_post_footer.md %}
 {%- else %}
 

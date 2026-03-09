@@ -3,10 +3,10 @@
 
 {%- capture _posts %}
 ## Other posts
-- `// links to other post`
+`// links to other post`
 - [Example post](#){: onclick="{{onclick}}"}
 - [Another link to a post](#){: onclick="{{onclick}}"}
-- [You get the point](#){: onclick="{{onclick}}"}
+- [You got the point](#){: onclick="{{onclick}}"}
 {%- endcapture %}
 <aside style="margin-top:3rem">{{ _posts | markdownify }}</aside>
 

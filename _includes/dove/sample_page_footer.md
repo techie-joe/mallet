@@ -3,10 +3,10 @@
 
 {%- capture _pages %}
 ## Other pages
-- `// links to other page`
+`// links to other page`
 - [Example page](#){: onclick="{{onclick}}"}
 - [Another link to a page](#){: onclick="{{onclick}}"}
-- [You get the point](#){: onclick="{{onclick}}"}
+- [You got the point](#){: onclick="{{onclick}}"}
 {%- endcapture %}
 <aside style="margin-top:3rem">{{ _pages | markdownify }}</aside>
 
